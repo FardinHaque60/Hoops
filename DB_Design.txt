@@ -1,0 +1,40 @@
+Table Player {
+  id integer [primary key]
+  team integer
+  attempted_FGs integer
+  made_FGs integer
+}
+
+Table Game { 
+  id integer [primary key]
+  max_points integer
+  point_units integer
+  date_start date
+  time_start timestamp
+  date_end date  
+  time_end timestamp
+}
+
+Table Team {
+  id integer [primary key]
+  captain integer
+  color varchar
+}
+
+Table Shot {
+  id integer [primary key]
+  value integer
+  player_id integer [note: 'derive game information from here']
+  x_coor integer
+  y_coor integer
+  date date
+  time timestamp
+}
+ 
+Ref: Game.id < Team.id
+
+Ref: Player.team < Team.id
+
+Ref: Team.captain - Player.id
+
+Ref: Shot.player_id < Player.id
