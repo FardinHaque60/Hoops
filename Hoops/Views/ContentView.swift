@@ -1,6 +1,6 @@
 //
 //  ContentView.swift
-//  Hoops
+//  Parent UI
 //
 //  Created by Fardin Haque on 5/23/24.
 //
@@ -13,6 +13,10 @@ struct ContentView: View {
     @Query private var items: [Item]
 
     var body: some View {
+        //add header that shows active game and its score if there is an active game
+        GamesView()
+        
+        /*
         NavigationSplitView {
             List {
                 ForEach(items) { item in
@@ -36,7 +40,7 @@ struct ContentView: View {
             }
         } detail: {
             Text("Select an item")
-        }
+        }*/
     }
 
     private func addItem() {

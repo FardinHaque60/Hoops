@@ -15,6 +15,9 @@
 		190117182BFFC3430068F85D /* HoopsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190117172BFFC3430068F85D /* HoopsTests.swift */; };
 		190117222BFFC3430068F85D /* HoopsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190117212BFFC3430068F85D /* HoopsUITests.swift */; };
 		190117242BFFC3430068F85D /* HoopsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190117232BFFC3430068F85D /* HoopsUITestsLaunchTests.swift */; };
+		19EC522D2C00D26000F9AA80 /* GamesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EC522C2C00D26000F9AA80 /* GamesView.swift */; };
+		19EC522F2C00D2F700F9AA80 /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EC522E2C00D2F700F9AA80 /* GameController.swift */; };
+		19EC52312C00D66300F9AA80 /* CreateGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EC52302C00D66300F9AA80 /* CreateGameView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +49,9 @@
 		1901171D2BFFC3430068F85D /* HoopsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HoopsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		190117212BFFC3430068F85D /* HoopsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoopsUITests.swift; sourceTree = "<group>"; };
 		190117232BFFC3430068F85D /* HoopsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoopsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		19EC522C2C00D26000F9AA80 /* GamesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesView.swift; sourceTree = "<group>"; };
+		19EC522E2C00D2F700F9AA80 /* GameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
+		19EC52302C00D66300F9AA80 /* CreateGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGameView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,9 +102,10 @@
 		190117032BFFC33F0068F85D /* Hoops */ = {
 			isa = PBXGroup;
 			children = (
+				19EC522B2C00CEC200F9AA80 /* Controllers */,
+				19EC522A2C00CEBB00F9AA80 /* Views */,
+				19EC52292C00CE4700F9AA80 /* Models */,
 				190117042BFFC33F0068F85D /* HoopsApp.swift */,
-				190117062BFFC33F0068F85D /* ContentView.swift */,
-				190117082BFFC33F0068F85D /* Item.swift */,
 				1901170A2BFFC3430068F85D /* Assets.xcassets */,
 				1901170C2BFFC3430068F85D /* Preview Content */,
 			);
@@ -128,6 +135,32 @@
 				190117232BFFC3430068F85D /* HoopsUITestsLaunchTests.swift */,
 			);
 			path = HoopsUITests;
+			sourceTree = "<group>";
+		};
+		19EC52292C00CE4700F9AA80 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				190117082BFFC33F0068F85D /* Item.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		19EC522A2C00CEBB00F9AA80 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				190117062BFFC33F0068F85D /* ContentView.swift */,
+				19EC522C2C00D26000F9AA80 /* GamesView.swift */,
+				19EC52302C00D66300F9AA80 /* CreateGameView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		19EC522B2C00CEC200F9AA80 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				19EC522E2C00D2F700F9AA80 /* GameController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,8 +293,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19EC52312C00D66300F9AA80 /* CreateGameView.swift in Sources */,
 				190117072BFFC33F0068F85D /* ContentView.swift in Sources */,
+				19EC522F2C00D2F700F9AA80 /* GameController.swift in Sources */,
 				190117092BFFC33F0068F85D /* Item.swift in Sources */,
+				19EC522D2C00D26000F9AA80 /* GamesView.swift in Sources */,
 				190117052BFFC33F0068F85D /* HoopsApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
