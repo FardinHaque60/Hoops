@@ -9,14 +9,15 @@
 /* Begin PBXBuildFile section */
 		190117052BFFC33F0068F85D /* HoopsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190117042BFFC33F0068F85D /* HoopsApp.swift */; };
 		190117072BFFC33F0068F85D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190117062BFFC33F0068F85D /* ContentView.swift */; };
-		190117092BFFC33F0068F85D /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190117082BFFC33F0068F85D /* Item.swift */; };
+		190117092BFFC33F0068F85D /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190117082BFFC33F0068F85D /* Game.swift */; };
 		1901170B2BFFC3430068F85D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1901170A2BFFC3430068F85D /* Assets.xcassets */; };
 		1901170E2BFFC3430068F85D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1901170D2BFFC3430068F85D /* Preview Assets.xcassets */; };
 		190117182BFFC3430068F85D /* HoopsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190117172BFFC3430068F85D /* HoopsTests.swift */; };
 		190117222BFFC3430068F85D /* HoopsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190117212BFFC3430068F85D /* HoopsUITests.swift */; };
 		190117242BFFC3430068F85D /* HoopsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190117232BFFC3430068F85D /* HoopsUITestsLaunchTests.swift */; };
+		19A17D242C050CB90031428B /* DeuceComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A17D232C050CB90031428B /* DeuceComponent.swift */; };
+		19A17D262C0512EA0031428B /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A17D252C0512EA0031428B /* Team.swift */; };
 		19EC522D2C00D26000F9AA80 /* GamesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EC522C2C00D26000F9AA80 /* GamesView.swift */; };
-		19EC522F2C00D2F700F9AA80 /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EC522E2C00D2F700F9AA80 /* GameController.swift */; };
 		19EC52312C00D66300F9AA80 /* CreateGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EC52302C00D66300F9AA80 /* CreateGameView.swift */; };
 /* End PBXBuildFile section */
 
@@ -41,7 +42,7 @@
 		190117012BFFC33F0068F85D /* Hoops.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hoops.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		190117042BFFC33F0068F85D /* HoopsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoopsApp.swift; sourceTree = "<group>"; };
 		190117062BFFC33F0068F85D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		190117082BFFC33F0068F85D /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		190117082BFFC33F0068F85D /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		1901170A2BFFC3430068F85D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1901170D2BFFC3430068F85D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		190117132BFFC3430068F85D /* HoopsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HoopsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -49,8 +50,9 @@
 		1901171D2BFFC3430068F85D /* HoopsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HoopsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		190117212BFFC3430068F85D /* HoopsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoopsUITests.swift; sourceTree = "<group>"; };
 		190117232BFFC3430068F85D /* HoopsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoopsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		19A17D232C050CB90031428B /* DeuceComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeuceComponent.swift; sourceTree = "<group>"; };
+		19A17D252C0512EA0031428B /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		19EC522C2C00D26000F9AA80 /* GamesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesView.swift; sourceTree = "<group>"; };
-		19EC522E2C00D2F700F9AA80 /* GameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
 		19EC52302C00D66300F9AA80 /* CreateGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGameView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -102,7 +104,6 @@
 		190117032BFFC33F0068F85D /* Hoops */ = {
 			isa = PBXGroup;
 			children = (
-				19EC522B2C00CEC200F9AA80 /* Controllers */,
 				19EC522A2C00CEBB00F9AA80 /* Views */,
 				19EC52292C00CE4700F9AA80 /* Models */,
 				190117042BFFC33F0068F85D /* HoopsApp.swift */,
@@ -137,10 +138,19 @@
 			path = HoopsUITests;
 			sourceTree = "<group>";
 		};
+		19A17D222C050C8F0031428B /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				19A17D232C050CB90031428B /* DeuceComponent.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		19EC52292C00CE4700F9AA80 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				190117082BFFC33F0068F85D /* Item.swift */,
+				190117082BFFC33F0068F85D /* Game.swift */,
+				19A17D252C0512EA0031428B /* Team.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -148,19 +158,12 @@
 		19EC522A2C00CEBB00F9AA80 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				19A17D222C050C8F0031428B /* Components */,
 				190117062BFFC33F0068F85D /* ContentView.swift */,
 				19EC522C2C00D26000F9AA80 /* GamesView.swift */,
 				19EC52302C00D66300F9AA80 /* CreateGameView.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		19EC522B2C00CEC200F9AA80 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				19EC522E2C00D2F700F9AA80 /* GameController.swift */,
-			);
-			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -295,9 +298,10 @@
 			files = (
 				19EC52312C00D66300F9AA80 /* CreateGameView.swift in Sources */,
 				190117072BFFC33F0068F85D /* ContentView.swift in Sources */,
-				19EC522F2C00D2F700F9AA80 /* GameController.swift in Sources */,
-				190117092BFFC33F0068F85D /* Item.swift in Sources */,
+				190117092BFFC33F0068F85D /* Game.swift in Sources */,
+				19A17D262C0512EA0031428B /* Team.swift in Sources */,
 				19EC522D2C00D26000F9AA80 /* GamesView.swift in Sources */,
+				19A17D242C050CB90031428B /* DeuceComponent.swift in Sources */,
 				190117052BFFC33F0068F85D /* HoopsApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

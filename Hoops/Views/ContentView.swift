@@ -10,7 +10,7 @@ import SwiftData
 
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
-    @Query private var items: [Item]
+    @Query private var games: [Game]
 
     var body: some View {
         //add header that shows active game and its score if there is an active game
@@ -43,6 +43,7 @@ struct ContentView: View {
         }*/
     }
 
+    /*
     private func addItem() {
         withAnimation {
             let newItem = Item(timestamp: Date())
@@ -57,9 +58,10 @@ struct ContentView: View {
             }
         }
     }
+     */
 }
 
 #Preview {
     ContentView()
-        .modelContainer(for: Item.self, inMemory: true)
+        .modelContainer(for: Game.self, inMemory: true)
 }
