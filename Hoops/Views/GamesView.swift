@@ -14,7 +14,7 @@ struct GamesView: View {
     @Query private var games: [Game]
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack() {
                 if (games.isEmpty) {
                     Text("No games to show, click + to create one")
@@ -50,6 +50,7 @@ struct GamesView: View {
                 
                 Spacer()
             }
+            .navigationBarBackButtonHidden(true) //TODO: navigation stack is never reset, home page just has no access to previous
             .navigationBarTitle("Games", displayMode: .inline)
         }
     }

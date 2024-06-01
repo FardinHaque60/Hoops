@@ -20,9 +20,10 @@ struct CreateGameView: View {
     @State private var isYesSelected: Bool = false
     
     @State private var gameSaved: Bool = false
+    @State private var goHome: Bool = false
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack(alignment: .leading, spacing: 20) {
                 TextField("Game Name", text: $gameName)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
@@ -60,20 +61,16 @@ struct CreateGameView: View {
                 }
                 .alert(isPresented: $gameSaved) {
                     Alert(title: Text("Success"), message: Text("Game created successfully"), dismissButton: .default(Text("OK")) {
-                        //reset all fields back to blank in case user wants to make another game
-                        gameName = ""
-                        targetScore = ""
-                        pointIncrement = ""
-                        team1 = ""
-                        team2 = ""
-                        isYesSelected = false
-                        //TODO: add navigation to games page
+                        goHome = true
                     })
                 }
             }
             .padding(.horizontal)
+            .navigationBarTitle("Create Game", displayMode: .inline)
+            .navigationDestination(isPresented: $goHome) {
+                GamesView()
+            }
         }
-        .navigationBarTitle("Create Game", displayMode: .inline)
     }
     
     private func addGame() { //TODO: handle numeric only inputs for targetScore, pointInc, etc. in this method and alert user of invalid inp

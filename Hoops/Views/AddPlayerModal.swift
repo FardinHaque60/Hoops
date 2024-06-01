@@ -16,18 +16,17 @@ struct AddPlayerModal: View {
     @State var playerName: String = ""
     
     var body: some View {
-        NavigationView {
-            VStack {
+        NavigationStack {
+            VStack(spacing: 20) {
                 TextField("Player Name", text: $playerName)
                     .padding()
                     .background(Color(UIColor.systemGray6))
                     .cornerRadius(8)
-                    .padding()
                 
-                //TODO: add additional fields for player
+                //TODO: add additional fields to create player
                 
                 Button(action: {
-                    /* TODO: Add player logic here
+                    /* TODO: Add player to db logic here
                      let player = Player(name: playerName)
                      
                      modelContext.add(player)
@@ -42,10 +41,10 @@ struct AddPlayerModal: View {
                         .background(Color.blue)
                         .cornerRadius(8)
                 }
-                .padding()
                 
                 Spacer()
             }
+            .padding(.horizontal)
             .navigationBarTitle("Add Player for Team \(team.name)", displayMode: .inline)
         }
         .navigationBarHidden(true)

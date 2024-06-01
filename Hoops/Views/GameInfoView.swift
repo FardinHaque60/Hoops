@@ -19,21 +19,21 @@ struct GameInfoView: View {
     @State private var addPlayerTeam2: Bool = false
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack(spacing: 0) {
                 TeamListComponent(expanded: $team1Expanded, team: game.teams[0], playerModal: $addPlayerTeam1)
                 TeamListComponent(expanded: $team2Expanded, team: game.teams[1], playerModal: $addPlayerTeam2)
                 
                 Spacer()
             }
-        }
-        .padding(.horizontal)
-        .navigationBarTitle("\(game.name) Details", displayMode: .inline)
-        .sheet(isPresented: $addPlayerTeam1) {
-            AddPlayerModal(team: game.teams[0])
-        }
-        .sheet(isPresented: $addPlayerTeam2) {
-            AddPlayerModal(team: game.teams[1])
+            .padding(.horizontal)
+            .navigationBarTitle("\(game.name) Details", displayMode: .inline)
+            .sheet(isPresented: $addPlayerTeam1) {
+                AddPlayerModal(team: game.teams[0])
+            }
+            .sheet(isPresented: $addPlayerTeam2) {
+                AddPlayerModal(team: game.teams[1])
+            }
         }
     }
 }
