@@ -12,15 +12,18 @@ import SwiftData
 struct CreateGameView: View {
     @Environment(\.modelContext) private var modelContext
     
+    var increments = ["1's and 2's", "2's and 3's"]
+    
     @State private var gameName = ""
     @State private var targetScore = ""
-    @State private var pointIncrement = ""
+    @State private var pointIncrement = "1's and 2's"
     @State private var team1 = ""
     @State private var team2 = ""
-    @State private var isYesSelected: Bool = false
+    @State private var isYesSelected: Bool = false // for deuces
     
     @State private var gameSaved: Bool = false
     @State private var goHome: Bool = false
+    
     
     var body: some View {
         NavigationStack {
@@ -32,9 +35,15 @@ struct CreateGameView: View {
                 HStack {
                     TextField("Points to win", text: $targetScore) //TODO: add handling for numeric only check see line 69 for potential impl location
                         .textFieldStyle(RoundedBorderTextFieldStyle())
-                    
-                    TextField("Point Units", text: $pointIncrement)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                    /*
+                     TextField("Point Units", text: $pointIncrement)
+                         .textFieldStyle(RoundedBorderTextFieldStyle())
+                     */
+                    Picker("Point Units", selection: $pointIncrement) {
+                        ForEach(increments, id: \.self) {
+                            Text($0)
+                        }
+                    }
                 }
                 
                 DeuceButtons(isYesSelected: $isYesSelected)
@@ -74,7 +83,18 @@ struct CreateGameView: View {
     }
     
     private func addGame() { //TODO: handle numeric only inputs for targetScore, pointInc, etc. in this method and alert user of invalid inp
-        let game = Game(name: gameName, targetScore: Int(targetScore)!, pointIncrement: Int(pointIncrement)!, deuce: isYesSelected, teams: [])
+        
+        let pointIncrementValue: Int
+        switch pointIncrement {
+            case "1's and 2's":
+                pointIncrementValue = 1
+            case "2's and 3's":
+                pointIncrementValue = 2
+            default:
+                pointIncrementValue = 1 // Default value
+        }
+        
+        let game = Game(name: gameName, targetScore: Int(targetScore)!, pointIncrement: pointIncrementValue, deuce: isYesSelected, teams: [])
         modelContext.insert(game)
         
         let team1 = Team(name: team1, game: game)

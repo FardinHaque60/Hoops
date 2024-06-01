@@ -21,6 +21,9 @@ struct GameInfoView: View {
     var body: some View {
         NavigationStack {
             VStack(spacing: 0) {
+                Text("\(game.pointIncrement)'s and \(game.pointIncrement + 1)'s Game Up To \(game.targetScore) Points")
+                    .font(.title3)
+                    .padding(10)
                 TeamListComponent(expanded: $team1Expanded, team: game.teams[0], playerModal: $addPlayerTeam1)
                 TeamListComponent(expanded: $team2Expanded, team: game.teams[1], playerModal: $addPlayerTeam2)
                 
