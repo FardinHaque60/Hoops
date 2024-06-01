@@ -18,78 +18,81 @@ struct CreateGameView: View {
     @State private var team1 = ""
     @State private var team2 = ""
     @State private var isYesSelected: Bool = false
-    //@State private var selectedDate = Date()
-    //@State private var selectedTime = Date()
+    
+    @State private var gameSaved: Bool = false
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 20) {
-            TextField("Game Name", text: $gameName)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .padding(.horizontal)
-                .padding(.top, 20)
-            
-            HStack {
-                TextField("Points to win", text: $targetScore) //add handling for numeric only check
+        NavigationView {
+            VStack(alignment: .leading, spacing: 20) {
+                TextField("Game Name", text: $gameName)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding(.top, 20)
+                
+                HStack {
+                    TextField("Points to win", text: $targetScore) //TODO: add handling for numeric only check see line 69 for potential impl location
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                    
+                    TextField("Point Units", text: $pointIncrement)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                }
+                
+                DeuceButtons(isYesSelected: $isYesSelected)
+                
+                Text("Team Information")
+                    .bold()
+                    .font(.title)
+                TextField("Team 1 Name", text: $team1)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                 
-                TextField("Point Units", text: $pointIncrement)
+                TextField("Team 2 Name", text: $team2)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
-            }
-            .padding(.horizontal)
-            
-            DeuceButtons(isYesSelected: $isYesSelected)
-                .padding(.horizontal)
                 
-            Text("Team Information")
-                .bold()
-                .font(.title)
-                .padding(.horizontal)
-            TextField("Team 1 Name", text: $team1)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .padding(.horizontal)
-            
-            TextField("Team 2 Name", text: $team2)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .padding(.horizontal)
-            
-            /*
-            Text("Pick a start date: ")
-                .padding(.horizontal)
-            DatePicker("", selection: $selectedDate, displayedComponents: .date)
-                .datePickerStyle(WheelDatePickerStyle())
-                .padding(.horizontal, 30)
-            
-            HStack {
-                Text("Select a start time: ")
-                    .padding(.horizontal, 20)
-                DatePicker(
-                    "",
-                    selection: $selectedTime,
-                    displayedComponents: .hourAndMinute
-                )
-                .datePickerStyle(GraphicalDatePickerStyle())
-                .labelsHidden()
-                .padding(.horizontal, 20)
-            } */
-            Spacer()
-            
-            Button(action: addGame) {
-                Text("Submit")
-                    .fontWeight(.bold)
-                    .padding()
-                    .frame(maxWidth: .infinity)
-                    .background(Color.blue)
-                    .foregroundColor(.white)
-                    .cornerRadius(10)
+                Spacer()
+                
+                Button(action: addGame) { //TODO: redirect to games page and have notification for successful game creation
+                    Text("Submit")
+                        .fontWeight(.bold)
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .background(Color.blue)
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
+                }
+                .alert(isPresented: $gameSaved) {
+                    Alert(title: Text("Success"), message: Text("Game created successfully"), dismissButton: .default(Text("OK")) {
+                        //reset all fields back to blank in case user wants to make another game
+                        gameName = ""
+                        targetScore = ""
+                        pointIncrement = ""
+                        team1 = ""
+                        team2 = ""
+                        isYesSelected = false
+                        //TODO: add navigation to games page
+                    })
+                }
             }
             .padding(.horizontal)
         }
-        .navigationBarTitle("Create Game")
+        .navigationBarTitle("Create Game", displayMode: .inline)
     }
     
-    private func addGame() {
-        let game = Game(name: gameName, targetScore: Int(targetScore)!, pointIncrement: Int(pointIncrement)!, deuce: isYesSelected)
+    private func addGame() { //TODO: handle numeric only inputs for targetScore, pointInc, etc. in this method and alert user of invalid inp
+        let game = Game(name: gameName, targetScore: Int(targetScore)!, pointIncrement: Int(pointIncrement)!, deuce: isYesSelected, teams: [])
         modelContext.insert(game)
+        
+        let team1 = Team(name: team1, game: game)
+        modelContext.insert(team1)
+        
+        let team2 = Team(name: team2, game: game)
+        modelContext.insert(team2)
+        
+        do {
+            try modelContext.save()
+            gameSaved = true
+        }
+        catch {
+            print("game failed to save")
+        }
     }
 }
 

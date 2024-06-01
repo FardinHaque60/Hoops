@@ -16,7 +16,7 @@ struct ContentView: View {
         //add header that shows active game and its score if there is an active game
         GamesView()
         
-        /*
+        /* boiler plate, default code given for creating, deleting "items"
         NavigationSplitView {
             List {
                 ForEach(items) { item in
@@ -63,5 +63,4 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
-        .modelContainer(for: Game.self, inMemory: true)
 }

@@ -8,6 +8,17 @@
 import SwiftUI
 import SwiftData
 
+//used to get url for where SwiftData sqlite data is stored
+extension ModelContext {
+    var sqliteCommand: String {
+        if let url = container.configurations.first?.url.path(percentEncoded: false) {
+            "sqlite3 \"\(url)\""
+        } else {
+            "No SQLite database found."
+        }
+    }
+}
+
 @main
 struct HoopsApp: App {
     var sharedModelContainer: ModelContainer = {
@@ -18,7 +29,9 @@ struct HoopsApp: App {
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 
         do {
-            return try ModelContainer(for: schema, configurations: [modelConfiguration])
+            let container = try ModelContainer(for: schema, configurations: [modelConfiguration])
+            print(ModelContext(container).sqliteCommand)  // Print the SQLite location
+            return container
         } catch {
             fatalError("Could not create ModelContainer: \(error)")
         }

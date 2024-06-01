@@ -15,51 +15,59 @@ struct GamesView: View {
     
     var body: some View {
         NavigationView {
-            VStack(alignment: .leading) {
+            VStack() {
                 if (games.isEmpty) {
                     Text("No games to show, click + to create one")
                         .padding()
                 }
                 
-                List {
+                List { //TODO: reduce padding on top
                     ForEach(games) { game in
                         NavigationLink {
-                            Text(game.createdTimestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
+                            GameInfoView(game: game)
                         } label: {
-                            Text("\(game.name)")
-                                .bold()
-                                .font(.title2)
+                            VStack(alignment: .leading) {
+                                Text("\(game.name)")
+                                    .bold()
+                                    .font(.title2)
+                                Text("\(game.teams[0].name) vs. \(game.teams[1].name)")
+                                    .font(.subheadline)
+                            }
                         }
                     }
                     .onDelete(perform: deleteGame)
                 }
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        EditButton()
+                    }
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        NavigationLink(destination: CreateGameView()) {
+                            Image(systemName: "plus")
+                        }
+                    }
+                }
                 
                 Spacer()
             }
-            .navigationTitle("Games")
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    NavigationLink(destination: CreateGameView()) {
-                        Image(systemName: "plus")
-                    }
-                }
-            }
+            .navigationBarTitle("Games", displayMode: .inline)
         }
     }
     
     private func deleteGame(offsets: IndexSet) {
         withAnimation {
             for index in offsets {
-                modelContext.delete(games[index])
+                let game = games[index]
+                modelContext.delete(game.teams[0]) //TODO: manually deleting children teams due to bug with cascading delete, this is the workaround
+                modelContext.delete(game.teams[1])
+                modelContext.delete(game)
             }
+            try? modelContext.save()
         }
     }
 }
 
 #Preview {
     GamesView()
+        .modelContainer(for: Game.self, inMemory: true)
 }
