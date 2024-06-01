@@ -12,9 +12,11 @@ import SwiftData
 final class Team {
     var id: UUID = UUID() //auto generated id
     var name: String
+    var game: Game?
     
     
-    init(name: String) {
+    init(name: String, game: Game?) {
         self.name = name
+        self.game = game
     }
 }
