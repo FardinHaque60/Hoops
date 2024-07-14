@@ -31,7 +31,7 @@ struct HoopsApp: App {
 
         do {
             let container = try ModelContainer(for: schema, configurations: [modelConfiguration])
-            print(ModelContext(container).sqliteCommand)  // Print the SQLite location
+            print(ModelContext(container).sqliteCommand)  // Prints command to see SQL DB
             return container
         } catch {
             fatalError("Could not create ModelContainer: \(error)")
