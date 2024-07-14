@@ -16,7 +16,7 @@ final class Game {
     var name: String
     
     var targetScore: Int
-    var pointIncrement: Int
+    var pointIncrement: Int //represents value of a FG
     var startDate: Int?
     var startTime: Int?
     var endDate: Int?

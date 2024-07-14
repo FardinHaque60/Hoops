@@ -24,7 +24,8 @@ struct HoopsApp: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
             Game.self,
-            Team.self
+            Team.self,
+            Player.self
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 

@@ -26,13 +26,9 @@ struct AddPlayerModal: View {
                 //TODO: add additional fields to create player
                 
                 Button(action: {
-                    /* TODO: Add player to db logic here
-                     let player = Player(name: playerName)
-                     
-                     modelContext.add(player)
-                     
-                     try? modelContext.save()
-                     */
+                    let player = Player(name: playerName, team: team)
+                    modelContext.insert(player)
+                    try? modelContext.save()
                 }) {
                     Text("Add Player")
                         .foregroundColor(.white)

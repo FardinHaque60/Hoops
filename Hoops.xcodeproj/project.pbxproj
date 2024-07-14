@@ -20,6 +20,7 @@
 		191466A92C0A817E0097E06A /* TeamListComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191466A82C0A817E0097E06A /* TeamListComponent.swift */; };
 		19A17D242C050CB90031428B /* DeuceComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A17D232C050CB90031428B /* DeuceComponent.swift */; };
 		19A17D262C0512EA0031428B /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A17D252C0512EA0031428B /* Team.swift */; };
+		19A1C1FF2C0B97240068E398 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A1C1FE2C0B97240068E398 /* Player.swift */; };
 		19EC522D2C00D26000F9AA80 /* GamesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EC522C2C00D26000F9AA80 /* GamesView.swift */; };
 		19EC52312C00D66300F9AA80 /* CreateGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EC52302C00D66300F9AA80 /* CreateGameView.swift */; };
 /* End PBXBuildFile section */
@@ -58,6 +59,7 @@
 		191466A82C0A817E0097E06A /* TeamListComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamListComponent.swift; sourceTree = "<group>"; };
 		19A17D232C050CB90031428B /* DeuceComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeuceComponent.swift; sourceTree = "<group>"; };
 		19A17D252C0512EA0031428B /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
+		19A1C1FE2C0B97240068E398 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		19EC522C2C00D26000F9AA80 /* GamesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesView.swift; sourceTree = "<group>"; };
 		19EC52302C00D66300F9AA80 /* CreateGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGameView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -158,6 +160,7 @@
 			children = (
 				190117082BFFC33F0068F85D /* Game.swift */,
 				19A17D252C0512EA0031428B /* Team.swift */,
+				19A1C1FE2C0B97240068E398 /* Player.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -305,6 +308,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19A1C1FF2C0B97240068E398 /* Player.swift in Sources */,
 				19EC52312C00D66300F9AA80 /* CreateGameView.swift in Sources */,
 				190117072BFFC33F0068F85D /* ContentView.swift in Sources */,
 				191466A92C0A817E0097E06A /* TeamListComponent.swift in Sources */,
@@ -478,6 +482,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Hoops/Preview Content\"";
+				DEVELOPMENT_TEAM = RWJC3PB94L;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -506,6 +511,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Hoops/Preview Content\"";
+				DEVELOPMENT_TEAM = RWJC3PB94L;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
