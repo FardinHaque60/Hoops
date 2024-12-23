@@ -1,6 +1,6 @@
 //
 //  GameInfoView.swift
-//  Hoops
+//  Info of any clicked game
 //
 //  Created by Fardin Haque on 5/29/24.
 //
@@ -22,6 +22,7 @@ struct GameInfoView: View {
     var body: some View {
         NavigationStack {
             VStack(spacing: 0) {
+                /*
                 TeamListComponent(
                     expanded: $team1Expanded,
                     team: game.teams[0],
@@ -34,6 +35,7 @@ struct GameInfoView: View {
                     playerModal: $addPlayerTeam2,
                     playerInfoModal: $selectedPlayer
                 ) 
+                 */
 
                 Spacer()
             }

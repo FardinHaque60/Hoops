@@ -1,6 +1,6 @@
 //
 //  CreateGameView.swift
-//  Hoops
+//  Button rendered when "+" clicked on GamesView page
 //
 //  Created by Fardin Haque on 5/24/24.
 //

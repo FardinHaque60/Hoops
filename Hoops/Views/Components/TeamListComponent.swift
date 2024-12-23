@@ -1,6 +1,6 @@
 //
 //  TeamListComponent.swift
-//  Hoops
+//  Component that lists a teams info
 //
 //  Created by Fardin Haque on 5/31/24.
 //

@@ -1,6 +1,6 @@
 //
 //  AddPlayerView.swift
-//  Hoops
+//  Modal that pops up on TeamListComponent to add a new player to that team
 //
 //  Created by Fardin Haque on 5/31/24.
 //

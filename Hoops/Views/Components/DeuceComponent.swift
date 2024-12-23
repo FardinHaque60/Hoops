@@ -1,6 +1,6 @@
 //
 //  DeuceComponent.swift
-//  Hoops
+//  Component used to show duece feature on create game page
 //
 //  Created by Fardin Haque on 5/27/24.
 //
